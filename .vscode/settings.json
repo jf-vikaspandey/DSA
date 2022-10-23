@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "string": "cpp",
+        "new": "cpp",
+        "deque": "cpp",
+        "vector": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
