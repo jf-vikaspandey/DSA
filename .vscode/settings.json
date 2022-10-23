@@ -3,7 +3,10 @@
         "string": "cpp",
         "new": "cpp",
         "deque": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "sstream": "cpp",
+        "regex": "cpp",
+        "iostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
