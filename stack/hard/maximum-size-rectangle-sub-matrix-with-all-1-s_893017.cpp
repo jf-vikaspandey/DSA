@@ -1,4 +1,6 @@
-// https://www.codingninjas.com/codestudio/problems/largest-rectangle-in-a-histogram_1058184
+//
+// https://www.codingninjas.com/codestudio/problems/maximum-size-rectangle-sub-matrix-with-all-1-s_893017
+
 #include <stdio.h>
 #include <stack>
 #include <vector>
@@ -68,22 +70,39 @@ int largestRectangle(vector<int> &heights)
     return area;
 }
 
+int maximalAreaOfSubMatrixOfAll1(vector<vector<int>> &vt, int n, int m)
+{
+
+    int status = largestRectangle(vt[0]);
+    // Write your code here.
+    for (int i = 1; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (vt[i][j] != 0)
+            {
+                vt[i][j]= vt[i][j] + vt[i - 1][j];
+            }else{
+                 vt[i][j]=0;
+            }
+        }
+
+        int space = largestRectangle(vt[i]);
+
+        status = max(status, space);
+    }
+    return status;
+}
+
 int main()
 {
-  vector<int> vt;
-    vt.push_back(1);
-    vt.push_back(2);
-      vt.push_back(1);
-    vt.push_back(0);
-    vt.push_back(1);
-    vt.push_back(1);
-    vt.push_back(0);
-    vt.push_back(0);
-    vt.push_back(2);
-    vt.push_back(2);
+    vector<vector<int>> vt(2, vector<int>(3));
 
-    int size = largestRectangle(vt);
-    cout << "\n"
-         << size;
+    vt[0][0] = 1;
+    vt[0][1] = 1;
+    vt[1][0] = 1;
+    vt[1][1] = 1;
+    int size = maximalAreaOfSubMatrixOfAll1(vt, 2, 2);
+
     return 0;
 }
