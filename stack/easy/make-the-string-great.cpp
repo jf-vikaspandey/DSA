@@ -29,7 +29,7 @@ string makeGood(string s)
         s1 = st.top() + s1;
         st.pop();
     }
-    cout << s1;
+ 
     return s1;
 }
 
