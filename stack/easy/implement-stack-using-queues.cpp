@@ -18,9 +18,7 @@ public:
 
         q2.push(x);
 
-        for (int i = 0; i < q1.size(); i++)
-        {
-
+         while (!q1.empty()) {
             q2.push(q1.front());
             q1.pop();
         }
@@ -55,8 +53,12 @@ int main()
     MyStack* obj = new MyStack();
  obj->push(1);
  obj->push(2);
+ obj->push(3);
+  cout<< obj->pop();
+  cout<< obj->pop();
+  cout<< obj->pop();
   
-  cout<< obj->top();
+ // cout<< obj->top();
     return 0;
 }
 
